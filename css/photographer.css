@@ -1,11 +1,56 @@
+.fa-heart {
+    margin-left: 7px;
+}
+
+
 #contact_modal {
     display: none;
 }
 
+
+/* PROFIL */
 .photograph-header {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+}
+.photo img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.photo{
+    order: 1;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-right: 2rem;
+}
+.info{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 2rem;
+}
+.info h2{
+    font-size: 64px;
+    color: #901C1C;
+    margin: 0;
+
+}
+.info h3{
+    font-size: 23px;
+    color: #901C1C;
+    
+   
+    
+}
+.info h4{
+    font-size: 18px;
+    color: #525252;
+    margin-bottom: 2rem;
 }
 
 .contact_button {
@@ -19,6 +64,11 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    order: 1;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .modal {
@@ -46,6 +96,7 @@
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+    
 }
 
 form {
@@ -74,3 +125,207 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+/* TRI */
+
+.tri {
+    margin-left: 5.5%;
+    padding-top: 1rem;
+    font-size: 18px;
+}
+   .tri label {
+        margin-right: 5px;
+    }
+   .tri select {
+        padding: 0.7rem 0.5rem;
+        background-color:#901C1C;
+        color: white;
+        outline: none;
+    }
+
+
+
+/* Modale and form */
+*:focus {
+    border: 5px solid #d3573c;
+}
+
+button:focus {
+    border: 4px solid #901c1c;
+    background-color: #d3573c;
+}
+
+*:focus-visible {
+    outline: #d3573c;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901c1c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact_modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(196, 196, 196, 0.4);
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #db8876;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+    padding-bottom: 5%;
+}
+.modal header .header-title{
+    margin-top: 40px;
+}
+.modal header .header-title h2 {
+    font-size: 64px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.modal header .header-title span {
+    font-size: 64px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+form label {
+    color: #312e2e;
+    font-size: 36px;
+}
+
+form div {
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+form textarea {
+    font-size: 30px;
+    width: 100%;
+    resize: vertical;
+}
+
+.message-error {
+    display: none;
+    margin-top: 1%;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Gallery of images */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px 100px;
+    gap: 5.9rem;
+    
+
+}
+
+.gallery article {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 5%;
+}
+
+.gallery-media {
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.info-media {
+    display: flex;
+    justify-content: space-between;
+    color: #901c1c;
+    font-size: 24px;
+}
+
+.info-media .title {
+    margin: 0;
+    width: 75%;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.like {
+    display: flex;
+    margin: 0;
+}
+
+.like_number {
+    margin: 0;
+}
+
+
+ /* fenêtre likes */
+.infos {
+    position: fixed;
+    bottom: 0;
+    right: 1.3rem;
+    background-color:#db8876;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2.5rem 0.5rem;
+    width: 250px;
+    border-radius: 0.5rem 0.5rem 0 0;
+    box-sizing: border-box;
+}
+.infos__likes {
+        display: flex;
+}
+.infos__likes__icone {
+            padding: 0 1.5rem 0 0.5rem;
+            padding-top: 1.5rem ;
+        }
+    

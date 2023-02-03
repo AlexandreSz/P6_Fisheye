@@ -1,37 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+<html lang="fr">
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <script src="https://kit.fontawesome.com/48b30f5d9d.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" target="_self">
+      <img src="assets/images/logo.png" class="logo" alt="Page d'accueil Fisheye" />
+    </a>
+
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    </div>
+
+
+    <div class="tri">
+      <label for="Trier">Trier par :</label>
+      <select name="tri" id="tri-select">
+        <option value="populaire">Popularité</option>
+        <option value="date">Date</option>
+        <option value="titre">Titre</option>
+      </select>
+    </div>
+    <!-- Gallerie médias -->
+    <section class="gallery"></section>
+    <!-- footer du main -->
+    <footer class="infos">
+      <div class="infos__likes">
+        <p class="infos__likes__number"></p>
+        <i class="infos__likes__icone fas fa-heart"></i>
       </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+      <p class="infos__price"></p>
+    </footer>
+
+  </main>
+
+  <!-- Contact -->
+  <div id="contact_modal" aria-hidden="true">
+    <div class="modal" aria-labelledby="Contact">
+      <header>
+        <div class="header-title">
+          <h2 id="Contact">Contactez-moi</h2>
+          <span id="name-photographer"></span>
+        </div>
+
+        <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" aria-label="Close" />
+      </header>
+      <form name="contact">
+        <div>
+          <label for="firstname" id="First-name">Prénom</label>
+          <input type="text" id="firstname" name="firstname" aria-labelledby="First-name" aria-required="true" />
+          <p class="message-error">Veuillez mettre au moins 2 caractères alphabétiques</p>
+        </div>
+
+        <div>
+          <label for="lastname" id="Last-name">Nom</label>
+          <input type="text" id="lastname" name="lastname" aria-labelledby="Last-name" aria-required="true" />
+          <p class="message-error">Veuillez mettre au moins 2 caractères alphabétiques</p>
+        </div>
+
+        <div>
+          <label for="email" id="E-mail">Email</label>
+          <input type="email" id="email" name="email" aria-labelledby="E-mail" aria-required="true" />
+          <p class="message-error">Veuillez renseigner un mail</p>
+        </div>
+
+        <div>
+          <label for="message" id="Your-message"> Votre message </label>
+          <textarea id="message" name="message" rows="7" aria-labelledby="Your-message" aria-required="true"></textarea>
+          <p class="message-error">Veuillez écrire votre message</p>
+        </div>
+        <button class="contact_button" type="submit" value="Send">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/scripts/factories/mediaFactory.js"></script>
+  <script src="/scripts/utils/listBox.js"></script>
+  <script src="/scripts/utils/contactForm.js"></script>
+  <script src="/scripts/factories/profil.js"></script>
+  <script type="module" src="/scripts/pages/photographer.js"></script>
+</body>
+
 </html>
