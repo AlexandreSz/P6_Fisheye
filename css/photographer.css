@@ -290,12 +290,13 @@ form textarea {
     padding-top: 3px;
     cursor: pointer;
     opacity: 1;
-    
+    margin-top: 0;
+    margin-left: 5px;
 } 
 .gallery .photo .info .likes #nbLike{
     padding-top: 3px;
     cursor: pointer;
-    opacity: 1;
+    
    
 } 
 .gallery video {

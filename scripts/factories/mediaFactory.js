@@ -17,7 +17,7 @@ function mediaFactory(data) {
     const titres = document.createElement('titres')
     titres.setAttribute('data-title', title)
     titres.textContent = title
-    const i = document.createElement('i')
+    const i = document.createElement('span')
     i.setAttribute('class', 'fa-solid fa-heart')
     i.setAttribute('id', 'coeur')
     i.setAttribute('tabindex', '0')
