@@ -1,3 +1,4 @@
+import { lightbox } from '../../scripts/utils/lightBox.js'
 import { tri } from '../../scripts/utils/tri.js'
 import { manageLikes } from '../../scripts/utils/like.js'
 
@@ -54,6 +55,7 @@ async function displayData(photographers, medias) {
         mediaSection.append(userCardDOM3)
       })
       manageLikes()
+      lightbox()
     }
   })
 }
@@ -63,7 +65,7 @@ async function init() {
   const { photographers, media } = await getPhotographers()
   displayData(photographers, media)
   manageLikes()
-  sortMedia(media)
+  lightbox()
 }
 
 init()

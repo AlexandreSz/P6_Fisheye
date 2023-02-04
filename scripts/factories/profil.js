@@ -5,7 +5,7 @@ function photographerFactory(data) {
 
   function getUserPicture() {
     const div = document.createElement('div')
-    div.setAttribute('class', 'photo')
+    div.setAttribute('class', 'photoProfil')
     const img = document.createElement('img')
     img.setAttribute('src', picture)
     img.setAttribute('alt', name)
