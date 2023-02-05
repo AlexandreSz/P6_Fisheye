@@ -10,7 +10,7 @@ export function lightbox() {
   // On ajoute l'écouteur click sur les liens
   for (let link of links) {
     link.addEventListener('click', function (e) {
-      prev.focus()
+      trapFocus(modale)
       // On désactive le comportement des liens
       e.preventDefault()
       //on ajoute l'image du lien cliqué dans la modale
@@ -174,4 +174,31 @@ function slideFunction(links, index, titles, content) {
     content.appendChild(vid)
     content.appendChild(title)
   }
+}
+
+function trapFocus(element) {
+  var focusableEls = element.querySelectorAll('button')
+  var firstFocusableEl = focusableEls[0]
+  var lastFocusableEl = focusableEls[focusableEls.length - 1]
+  var KEYCODE_TAB = 9
+
+  element.addEventListener('keydown', function (e) {
+    var isTabPressed = e.key === 'Tab' || e.keyCode === KEYCODE_TAB
+
+    if (!isTabPressed) {
+      return
+    }
+
+    if (e.shiftKey) {
+      /* shift + tab */ if (document.activeElement === firstFocusableEl) {
+        lastFocusableEl.focus()
+        e.preventDefault()
+      }
+    } /* tab */ else {
+      if (document.activeElement === lastFocusableEl) {
+        firstFocusableEl.focus()
+        e.preventDefault()
+      }
+    }
+  })
 }
