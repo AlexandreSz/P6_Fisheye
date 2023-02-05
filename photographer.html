@@ -87,19 +87,20 @@
 
   <!--Lightbox-->
 
-  <div class="ligthbox-modal" id="Lmodal" role="dialog">
-    <div class="content-modal" id="track"></div>
-
-    <button class="closeLight" aria-label="Close">
-      <i class="fa-solid fa-xmark fa-3x"></i>
+  <div class="ligthbox-modal" id="Lmodal" role="dialog" aria-hidden="true">
+    <button class="close" aria-label="Fermer la lightbox">
+      <span class="fa-solid fa-xmark"></span>
     </button>
+    <div class="content-modal" tabindex="0" id="track"></div>
+
+
 
     <div class="controls">
-      <button class="lightbox_prev" aria-label="Previous image">
-        <i id="prev" class="control prev-slide fa-solid fa-angle-left"></i>
+      <button class="lightbox_prev" aria-label="Image précédente">
+        <i id="prev" tabindex="0" class="control prev-slide fa-solid fa-angle-left"></i>
       </button>
-      <button class="lightbox_next" aria-label="Next image">
-        <i id="next" class="control next-slide fa-solid fa-angle-right"></i>
+      <button class="lightbox_next" aria-label="Image suivante">
+        <i id="next" tabindex="0" class="control next-slide fa-solid fa-angle-right"></i>
       </button>
 
 

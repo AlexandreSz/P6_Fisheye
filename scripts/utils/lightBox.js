@@ -1,13 +1,16 @@
 export function lightbox() {
   const modale = document.querySelector('#Lmodal')
-  const close = document.querySelector('.closeLight')
+  const close = document.querySelector('.close')
   const links = Array.from(document.querySelectorAll('.gallery a'))
   const titles = Array.from(document.querySelectorAll('.info titres'))
   const types = Array.from(document.querySelectorAll('data-type'))
+  let prev = document.getElementById('prev')
+  let next = document.getElementById('next')
 
   // On ajoute l'écouteur click sur les liens
   for (let link of links) {
     link.addEventListener('click', function (e) {
+      prev.focus()
       // On désactive le comportement des liens
       e.preventDefault()
       //on ajoute l'image du lien cliqué dans la modale
@@ -28,8 +31,6 @@ export function lightbox() {
       const imageBox = document.getElementById('lightbox-media')
       const titleBox = document.getElementById('title-media')
 
-      let prev = document.getElementById('prev')
-      let next = document.getElementById('next')
       let index = links.indexOf(link)
 
       next.addEventListener('click', function () {
@@ -76,6 +77,9 @@ export function lightbox() {
     })
   }
 }
+
+//------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------
 
 //Fonction fermeture lightbox
 function closeLigthBox(modale) {

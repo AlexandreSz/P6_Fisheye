@@ -12,11 +12,13 @@ function mediaFactory(data) {
     const lien = document.createElement('a')
     lien.setAttribute('aria-label', title)
     lien.setAttribute('alt', title)
+    lien.setAttribute('tabindex', '0')
     const span = document.createElement('span')
     span.setAttribute('class', 'info')
     const titres = document.createElement('titres')
     titres.setAttribute('data-title', title)
     titres.textContent = title
+    titres.setAttribute('tabindex', '0')
     const i = document.createElement('span')
     i.setAttribute('class', 'fa-solid fa-heart')
     i.setAttribute('id', 'coeur')
@@ -40,6 +42,7 @@ function mediaFactory(data) {
       // video.setAttribute("controls", "true");
       video.setAttribute('class', 'media')
       video.setAttribute('alt', title)
+
       div.appendChild(lien)
       lien.appendChild(video)
       div.appendChild(span)
@@ -56,6 +59,7 @@ function mediaFactory(data) {
       lien.setAttribute('data-id', id)
       lien.setAttribute('data-title', title)
       lien.setAttribute('data-type', 'img')
+
       div.appendChild(lien)
       lien.appendChild(img)
       div.appendChild(span)
