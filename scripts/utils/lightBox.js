@@ -66,6 +66,7 @@ export function lightbox() {
       //test affichage modale
       modale.classList.add('show')
       modale.setAttribute('active', '')
+      prev.focus()
       const foot = document.querySelector('.infos')
       foot.style.display = 'none'
 
